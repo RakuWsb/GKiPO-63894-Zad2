@@ -3,9 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
-# Img url (Nowy link do zdjęcia samochodu - Ferrari 488 GTB)
+
 url = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ferrari_488_GTB_by_Alex_Penfold.jpg/1280px-Ferrari_488_GTB_by_Alex_Penfold.jpg"
-# Imitate browser-like behavior to avoid error 403: Forbidden
 header = {'User-Agent': 'Mozilla/5.0'}
 
 # Fn to check img quality
@@ -35,7 +34,7 @@ def main():
     arr = np.asarray(bytearray(image_data), dtype=np.uint8)
     img = cv2.imdecode(arr, -1)
     
-    # Konwersja formatów
+
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2GRAY)
 
